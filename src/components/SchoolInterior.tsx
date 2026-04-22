@@ -269,7 +269,7 @@ export default function SchoolInterior() {
     <group>
       {/* Classroom A — right back */}
       <group position={[6, 0.2, -7]}>
-        <Classroom label="Classroom A" boardColor="#234f8e" />
+        <Classroom boardColor="#234f8e" />
       </group>
 
       {/* Computer Lab — right front */}
