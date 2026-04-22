@@ -2,7 +2,7 @@ import { Box, Cyl, Sph, PhysBox, Desk, Chair, Monitor, GlowPanel } from './Primi
 
 // Detailed Classroom component
 // Positioned at room centre, caller sets group position
-function Classroom({ label='Classroom A', boardColor='#234f8e' }:{ label?:string; boardColor?:string }) {
+function Classroom({ boardColor='#234f8e' }:{ boardColor?:string }) {
   return (
     <group>
       {/* ── SMART BOARD ── */}
@@ -242,7 +242,7 @@ function TrophyRoom() {
         <PhysBox p={[0,0.45,0]}   s={[1.2,0.9,1.2]} c="#ffd700" />  {/* 1st */}
         <PhysBox p={[-1.4,0.3,0]} s={[1.2,0.6,1.2]} c="#c0c0c0" />  {/* 2nd */}
         <PhysBox p={[1.4,0.2,0]}  s={[1.2,0.4,1.2]} c="#cd7f32" />  {/* 3rd */}
-        {['1','2','3'].map((n,i) => (
+        {['1','2','3'].map((_n,i) => (
           <Box key={i} p={[[-1.4,0,1.4][i],0.66+[0.3,0.15,0.05][i],0.12] as [number,number,number]}
             s={[0.6,0.28,0.06]} c="#fff" />
         ))}
