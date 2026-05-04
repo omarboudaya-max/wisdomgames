@@ -69,13 +69,12 @@ body {
   display: block;
   height: 80px;
   width: 80px;
-  background-image: url('./assets/logo.png');
+  background-image: url('./assets/logo-white.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
   transition: transform 0.3s ease;
-  filter: drop-shadow(0 0 15px rgba(108,99,255,0.6));
-  mix-blend-mode: screen;
+  filter: drop-shadow(0 0 10px rgba(108,99,255,0.4));
 }
 
 .navbar-logo:hover .logo-img {
@@ -590,12 +589,11 @@ body {
   display: block;
   height: 90px;
   width: 90px;
-  background-image: url('./assets/logo.png');
+  background-image: url('./assets/logo-white.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  filter: drop-shadow(0 0 15px rgba(0,212,255,0.7));
-  mix-blend-mode: screen;
+  filter: drop-shadow(0 0 10px rgba(0,212,255,0.5));
 }
 
 .hud-badge {
