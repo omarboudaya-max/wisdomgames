@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import logo from '../assets/logo.png'
 
 const features = [
   {
@@ -53,7 +54,10 @@ export default function Landing() {
     <div>
       {/* NAVBAR */}
       <nav className="navbar">
-        <span className="navbar-logo">🌐 WisdomVerse</span>
+        <div className="navbar-logo" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
+          <div className="logo-img" />
+          <span>WisdomVerse</span>
+        </div>
         <ul className="navbar-links">
           <li><a href="#features">Features</a></li>
           <li><a href="#how">How It Works</a></li>
@@ -182,7 +186,10 @@ export default function Landing() {
 
       {/* FOOTER */}
       <footer className="footer">
-        <span className="footer-logo">🌐 WisdomVerse</span>
+        <div className="footer-logo" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
+          <div className="logo-img" />
+          <span>WisdomVerse</span>
+        </div>
         <span className="footer-copy">
           © 2026 WisdomVerse · AI-Powered Educational Metaverse · UAE
         </span>

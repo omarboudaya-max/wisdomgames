@@ -1,6 +1,7 @@
 import { Canvas } from '@react-three/fiber'
 import { Suspense, useState, useEffect } from 'react'
-import { KeyboardControls, OrbitControls } from '@react-three/drei'
+import { Physics } from '@react-three/rapier'
+import { KeyboardControls, Sky, Environment } from '@react-three/drei'
 import { useNavigate } from 'react-router-dom'
 import World from '../components/World'
 
@@ -78,22 +79,26 @@ export default function MetaversePage() {
 
       {/* 3D Canvas */}
       <KeyboardControls map={keyboardMap}>
-        <Suspense fallback={<div className="metaverse-loading">Loading 3D World...</div>}>
-          <Canvas
-            camera={{ fov: 65 }}
-            style={{ position: 'absolute', inset: 0, background: '#87ceeb' }}
-          >
-            <ambientLight intensity={1.5} />
-            <hemisphereLight args={['#ffffff','#444444', 1.0]} />
+        <Canvas
+          shadows
+          camera={{ fov: 65 }}
+          style={{ position: 'absolute', inset: 0 }}
+        >
+          <Suspense fallback={null}>
+            <Sky sunPosition={[100, 20, 100]} />
+            <Environment preset="city" />
+            <ambientLight intensity={0.6} />
             <directionalLight
-              position={[20, 50, 20]}
-              intensity={2.0}
+              castShadow
+              position={[10, 15, 10]}
+              intensity={1.8}
+              shadow-mapSize={[2048, 2048]}
             />
-            <directionalLight position={[-20, 30, -20]} intensity={0.6} />
-            <World />
-            <OrbitControls makeDefault />
-          </Canvas>
-        </Suspense>
+            <Physics timeStep="vary">
+              <World />
+            </Physics>
+          </Suspense>
+        </Canvas>
       </KeyboardControls>
     </div>
   )

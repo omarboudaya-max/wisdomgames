@@ -1,9 +1,10 @@
-import Ecctrl from 'ecctrl'
+import Ecctrl, { EcctrlAnimation } from 'ecctrl'
+import { useRef } from 'react'
 
 export default function Avatar() {
   return (
     <Ecctrl
-      position={[0, 2, 20]}
+      position={[0, 3, 5]}
       // Camera
       camInitDis={-5}
       camMaxDis={-8}
