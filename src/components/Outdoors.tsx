@@ -1,4 +1,3 @@
-import { RigidBody } from '@react-three/rapier'
 
 function Box({ p, s, c = '#aaa', m = 0, r = 0.5 }: { p: [number, number, number]; s: [number, number, number]; c?: string; m?: number; r?: number }) {
   return (

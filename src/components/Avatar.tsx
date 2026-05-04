@@ -1,5 +1,4 @@
-import Ecctrl, { EcctrlAnimation } from 'ecctrl'
-import { useRef } from 'react'
+import Ecctrl from 'ecctrl'
 
 export default function Avatar() {
   return (
